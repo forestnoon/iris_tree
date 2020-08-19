@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アヤメの種類</title>
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="wrap">
+        <div class='field'>
+    <h1>アヤメの種類</h1>
+    {% for message in form.sepal_length.errors %}
+    <div>{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.sepal_width.errors %}
+    <div>{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.petal_length.errors %}
+    <div>{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.petal_width.errors %}
+    <div>{{ message }}</div>
+    {% endfor %}
+
+    <!-- 結果 -->
+    <p class="result">{{result}}</p>
+    
+    <form method="post" action="/">
+        {{form.sepal_length.label}}<br>
+        {{form.sepal_length}}<br>
+
+        {{form.sepal_width.label}}<br>
+        {{form.sepal_width}}<br>
+        
+        {{form.petal_length.label}}<br>
+        {{form.petal_length}}<br>
+        
+        {{form.petal_width.label}}<br>
+        {{form.petal_width}}<br>
+
+        {{form.submit}}
+    </form>
+   
+     </div>
+    </div>
+</body>
+</html>
