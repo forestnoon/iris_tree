@@ -17,29 +17,30 @@
 }
 
 .field{
-  box-sizing: border-box;
   width: 70%;
   margin: 5% auto auto;
+  padding: 3%;
   height: fit-content;
-  border: #fff 1px dotted;
+  border: #fff 2px dotted;
+  overflow-y: scroll;
+
 }
 
 h1{
-  margin: 5% auto;
+  margin: 0 auto 2%;
   text-align: center;
   color: white;
   font-size: 3rem;
 }
 
-input, label{
-  display: block;
-  margin: auto;
-}
-
 label{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
   color: #fff;
   font-size: 1.3rem;
 }
+
 .result{
   display: block;
   color: red;
@@ -48,15 +49,24 @@ label{
   text-align: center;
 }
 
+input{
+  display: block;
+  background-color: #fff;
+  margin: 0 auto;
+}
 
 /* レスポンシブ */
 @media (max-width:757px){
   .field{
     width: 100%;
-    margin: 20% auto auto;
+    /* overflow: scroll; */
+    border: none;
   }
   h1{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+  }
+  label{
+    font-size: 1rem;
   }
 }
 

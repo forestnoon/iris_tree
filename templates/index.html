@@ -6,11 +6,14 @@
     <title>アヤメの種類</title>
     <!-- <link rel="stylesheet" href="../static/style.css"> -->
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+
 </head>
+
+
 <body>
     <div class="wrap">
         <div class='field'>
-    <h1>アヤメの種類</h1>
+    <h1>アヤメの分類</h1>
     {% for message in form.sepal_length.errors %}
     <div>{{ message }}</div>
     {% endfor %}
@@ -46,6 +49,8 @@
         {{form.submit}}
     </form>
    
+
+
      </div>
     </div>
 </body>
