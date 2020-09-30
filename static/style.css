@@ -9,34 +9,32 @@
  * 全ての背景画像にbackground-repeat: no-repeat.
  */html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,:after,:before{background-repeat:no-repeat;box-sizing:inherit}:after,:before{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}audio:not([controls]){display:none;height:0}hr{overflow:visible}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}summary{display:list-item}small{font-size:80%}[hidden],template{display:none}abbr[title]{border-bottom:1px dotted;text-decoration:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace,monospace}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}input{border-radius:0}[role=button],[type=button],[type=reset],[type=submit],button{cursor:pointer}[disabled]{cursor:default}[type=number]{width:auto}[type=search]{-webkit-appearance:textfield}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit}optgroup{font-weight:700}button{overflow:visible}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:0;padding:0}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button:-moz-focusring{outline:1px dotted ButtonText}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}button,select{text-transform:none}button,input,select,textarea{background-color:transparent;border-style:none;color:inherit}select{-moz-appearance:none;-webkit-appearance:none}select::-ms-expand{display:none}select::-ms-value{color:currentColor}legend{border:0;color:inherit;display:table;max-width:100%;white-space:normal}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}img{border-style:none}progress{vertical-align:baseline}svg:not(:root){overflow:hidden}audio,canvas,progress,video{display:inline-block}@media screen{[hidden~=screen]{display:inherit}[hidden~=screen]:not(:active):not(:focus):not(:target){position:absolute!important;clip:rect(0 0 0 0)!important}}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled]{cursor:default}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}ul,ol{list-style:none;}a{text-decoration:none;}.wrapper{overflow:hidden;}body{overflow-y:scroll;}
 
+p{
+  color: #fff;
+}
+
 .wrap{
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: url(../static/iris_img.png) no-repeat center center;
 }
 
 .field{
-  width: 70%;
-  margin: 5% auto auto;
-  padding: 3%;
+  position: relative;
+  width: 80%;
+  margin: 10px auto;
   height: fit-content;
-  border: #fff 2px dotted;
-  overflow-y: scroll;
-  -ms-overflow-style: none;    /* IE, Edge 対応 */
-  scrollbar-width: none;       /* Firefox 対応 */
+  border: #fff 2px solid;
+  border-radius: 10px;
 }
 
-.container::-webkit-scrollbar {  /* Chrome, Safari 対応 */
-  display:none;
-
-}
 
 h1{
-  margin: 0 auto 2%;
+  margin: 0 auto 30px;
   text-align: center;
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 label{
@@ -46,26 +44,60 @@ label{
   color: #fff;
   font-size: 1.3rem;
 }
+.result-area{
+  height: 2.0rem;
+  margin: 0 auto 30px;
 
+}
 .result{
-  display: block;
   color: red;
   font-size: 1.5rem;
-  margin: 0 auto;
   text-align: center;
 }
 
-input{
+.container{
+  width: 80%;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+hr{
+  margin-bottom: 30px;
+}
+
+input[type=text]{
   display: block;
+  width: 2.0rem;
+  height: 2.0rem;
   background-color: #fff;
-  margin: 0 auto;
+  margin: 0 50px;
+  text-align: center;
+  border-bottom: 1px white solid;
+  border-radius: 5px;
+}
+input[type=text]:focus{
+  outline: none;
+}
+
+
+input[type=submit]{
+  width: 100px;
+  height: 2.0rem;
+  margin: auto;
+  border-radius: 10px;
+  background-color: white;
+}
+
+input[type=submit]:hover{
+  opacity: 0.7;
 }
 
 /* レスポンシブ */
 @media (max-width:757px){
   .field{
     width: 100%;
-    /* overflow: scroll; */
+    margin: 0 10px;
     border: none;
   }
   h1{
@@ -73,6 +105,15 @@ input{
   }
   label{
     font-size: 1rem;
+  }
+  .container{
+    display: block;
+  }
+  hr{
+    display: none;
+  }
+  input[type=text]{
+    margin: 0 auto 20px;
   }
 }
 
