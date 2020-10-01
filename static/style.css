@@ -14,14 +14,13 @@ p{
 }
 
 .wrap{
-  position: absolute;
+  position: fixed;
   width: 100%;
   min-height: 100vh;
   background: url(../static/iris_img.png) no-repeat center center;
 }
 
 .field{
-  position: relative;
   width: 80%;
   margin: 10px auto;
   height: fit-content;
@@ -62,7 +61,8 @@ label{
 }
 
 hr{
-  margin-bottom: 30px;
+  width: 90%;
+  margin:0 auto 30px;
 }
 
 input[type=text]{
